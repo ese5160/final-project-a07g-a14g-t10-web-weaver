@@ -70,6 +70,10 @@
 
 ![](Sensor_reading_flowchart.png)
 
+### 3. Actuator control Task flow chart
+
+![](Actuator_control_flowchart.png)
+
 # 2. Starter code
 
 ## 1	What does “InitializeSerialConsole()” do? In said function, what is “cbufRx” and “cbufTx”? What type of data structure is it? 
