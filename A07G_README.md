@@ -48,6 +48,43 @@
 
 **SRS 08** - The C/T with a START button shall be able to countdown the cooking time, gives out alarm when the time is over.
 
-**SRS 09 **- The PREV and NEXT button shall be able to switch between different steps of a recipe.
+**SRS 09**- The PREV and NEXT button shall be able to switch between different steps of a recipe.
 
 **SRS 10** - The should be a value display of the kitchen temperature and humidity at every screen.
+
+## 2. Block Diagram
+
+## 3. Flow charts
+
+
+# 2. Starter code
+
+## 1	What does “InitializeSerialConsole()” do? In said function, what is “cbufRx” and “cbufTx”? What type of data structure is it? 
+
+## 2	How are “cbufRx” and “cbufTx” initialized? Where is the library that defines them (please list the *C file they come from). 
+
+## 3	Where are the character arrays where the RX and TX characters are being stored at the end? Please mention their name and size.
+
+## 4	Where are the interrupts for UART character received and UART character sent defined? 
+
+## 5	What are the callback functions that are called when: 
+	1	A character is received? (RX) 
+	2	A character has been sent? (TX) 
+## 6	Explain what is being done on each of these two callbacks and how they relate to the cbufRx and cbufTx buffers. 
+
+## 7	Draw a diagram that explains the program flow for UART receive – starting with the user typing a character and ending with how that characters ends up in the circular buffer “cbufRx”. Please make reference to specific functions in the starter code. 
+
+## 8	Draw a diagram that explains the program flow for the UART transmission – starting from a string added by the program to the circular buffer “cbufTx” and ending on characters being shown on the screen of a PC (On Teraterm, for example). Please make reference to specific functions in the starter code. 
+
+## 9	What is done on the function “startStasks()” in main.c? How many threads are started?
+
+# 3. Debug logger module
+
+# 4.Wiretap the convo
+
+## 1	Submit your answers to your GitHub repository README.md
+## 2	Submit a photo of your hardware connections between the SAMW25 Xplained dev board and the logic analyzer. 
+## 3	Submit a screenshot of the decoded message.
+## 4	Submit a small capture file (i.e., the .sal file) of a wiretapped conversation (you don’t need to log 30 minutes worth of UART messages 🙂)
+
+	
