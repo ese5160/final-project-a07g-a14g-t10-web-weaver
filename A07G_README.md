@@ -82,6 +82,12 @@
 
 ![](On_off_button_flowchart.png)
 
+### 6. Wi-Fi Task flow chart
+
+![](Wifi_flowchart.png)
+
+
+
 # 2. Starter code
 
 ## 1	What does “InitializeSerialConsole()” do? In said function, what is “cbufRx” and “cbufTx”? What type of data structure is it? 
