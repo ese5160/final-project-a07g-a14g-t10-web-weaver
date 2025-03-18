@@ -153,6 +153,10 @@ void LogMessage(enum eDebugLogLevels level, const char *format, ...)
 {
     // Todo: Implement Debug Logger
 	// More detailed descriptions are in header file
+	
+	if (level >= currentDebugLevel) {
+		//print the message
+	} 
 }
 
 /*
