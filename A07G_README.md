@@ -62,7 +62,9 @@
 
 ## 3. Flow charts
 
+### 1. Joystick Task flow charts
 
+![](Joystick_flowchart.png)
 
 
 # 2. Starter code
@@ -86,7 +88,7 @@
 ## 4	Where are the interrupts for UART character received and UART character sent defined? 
 
 	* They are defined in functions "SerialConsoleWriteString(char *string)" and "SerialConsoleReadCharacter(uint8_t *rxChar)"
-	
+
 ## 5	What are the callback functions that are called when: 
 	a	A character is received? (RX)    usart_read_callback
 	b	A character has been sent? (TX)  usart_write_callback
@@ -94,7 +96,7 @@
 ## 6	Explain what is being done on each of these two callbacks and how they relate to the cbufRx and cbufTx buffers. 
 
 	* read: it is called when the system finishes receives all the bytes requested from a UART read job. This means that it should write to cbufRx buffers
- 	* write:it is called when the system finishes sending all the bytes requested from a UART read job. This means that it should write to cbufTx buffers
+	* write:it is called when the system finishes sending all the bytes requested from a UART read job. This means that it should write to cbufTx buffers
 
 ## 7	Draw a diagram that explains the program flow for UART receive – starting with the user typing a character and ending with how that characters ends up in the circular buffer “cbufRx”. Please make reference to specific functions in the starter code. 
 
