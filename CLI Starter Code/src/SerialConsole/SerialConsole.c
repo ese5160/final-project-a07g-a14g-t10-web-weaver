@@ -153,6 +153,17 @@ void LogMessage(enum eDebugLogLevels level, const char *format, ...)
 {
     // Todo: Implement Debug Logger
 	// More detailed descriptions are in header file
+	
+	char messageBuffer[200];
+	
+	if (level >= currentDebugLevel) {
+		//print the message
+		va_list args;
+		va_start(args, format);
+		vsprintf(messageBuffer, format, args);
+		va_end(args);
+		printf("%s\n", buffer);
+	} 
 }
 
 /*
