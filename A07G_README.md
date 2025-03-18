@@ -11,25 +11,29 @@
 ## 1. HRS & SRS
 
 ### HRS:
-**HRS 01** - The project shall be based on SAMW25
+**HRS 01** - The project shall be based on SAMW25.
 
-**HRS 02** - The project shall have 1 DHT sensor, 1 temperature probe, 1 LCD screen, 1 Wi-Fi Module
+**HRS 02** - The project shall have 1 SHT45 sensor, 1 RTD temperature probe, 1 LCD screen, 1 Wi-Fi Module, 1 LED, 1 Buzzer, 1 Joystick and several button and indication LED.
 
-**HRS 03** - The project should be able to switch between different sensors 
+**HRS 03** - The project should be able to switch between different sensors.
 
-**HRS 04** - The project shall use a joy stick to switch between different menus or sensors
+**HRS 04** - The project shall use a joystick as user input.
 
-**HRS 05** - The project shall have a SD card for storage purpose
+**HRS 05** - The project shall have a SD card for storage purpose.
 
-**HRS 06** - The project shall display a main user menu on LCD screen
+**HRS 06** - The project shall display a main user menu on LCD screen.
 
-**HRS 07** -  The project shall use a buzzer or equivalent component to sound alarms or alerts.
+**HRS 07** -  The project shall use a buzzer to sound alarms or alerts.
 
-**HRS 08** - The project shall have a on/off button and Wi-Fi provisioning button to launch the system and connect to Wi-Fi
+**HRS 08** - The project shall have a on/off button to launch the system.
 
-**HRS 09** - The project shall have some LED indications to indication the system status
+**HRS 09** - The project shall have some LED indications to indication the system status.
 
-**HRS 10** - The project shall use LiPo battery as power source together with boost circuit for 5V supply and buck circuit for 3.3V supply
+**HRS 10** - The project shall use LiPo battery as power source together with boost circuit for 5V supply and buck circuit for 3.3V supply.
+
+**HRS 11** - The project shall have a RTD temperature probe that can detect temperature from -50℃ to 280 ℃.
+
+**HRS 12** - The project shall have a temperature and humidity sensor that can sense relative humidity from 0%RH to 100%RH, and temperature from -40℃ to 150℃. 
 
 ### SRS:
 **SRS 01** - The main menu shall hold the classification of different recipes: BEEF/LAMB, PROK, CHICKEN, VEG, SEAFOOD and OTH
@@ -87,4 +91,4 @@
 ## 3	Submit a screenshot of the decoded message.
 ## 4	Submit a small capture file (i.e., the .sal file) of a wiretapped conversation (you don’t need to log 30 minutes worth of UART messages 🙂)
 
-	
+​	
