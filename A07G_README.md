@@ -11,13 +11,25 @@
 ## 1. HRS & SRS
 
 HRS:
-HRS. 1.The project shall be based on SAMW25
-HRS. 2.The project shall have 1 temperature sensor, 1 LCD screen, 1 WiFi Module
-HRS. 3.The project should be able to switch between different sensors 
-HRS. 4.The project shall use a joy stick to switch between different menus or sensors
-HRS. 5.The project shall have a SD card for storage purpose
-HRS. 6.The project shall display a main user menu on LCD screen
-HRS. 7. The project shall use a buzzer or equivalent component to sound alarms or alerts.
+**HRS 01** - The project shall be based on SAMW25
+
+**HRS 02** - The project shall have 1 DHT sensor, 1 temperature probe, 1 LCD screen, 1 Wi-Fi Module
+
+**HRS 03** - The project should be able to switch between different sensors 
+
+**HRS 04** - The project shall use a joy stick to switch between different menus or sensors
+
+**HRS 05** - The project shall have a SD card for storage purpose
+
+**HRS 06** - The project shall display a main user menu on LCD screen
+
+**HRS 07** -  The project shall use a buzzer or equivalent component to sound alarms or alerts.
+
+**HRS 08** - The project shall have a on/off button and Wi-Fi provisioning button to launch the system and connect to Wi-Fi
+
+**HRS 09** - The project shall have some LED indications to indication the system status
+
+**HRS 10** - The project shall use LiPo battery as power source together with boost circuit for 5V supply and buck circuit for 3.3V supply
 
 SRS:
 SRS 01 - The main menu shall hold the classification of different recipes: BEEF/LAMB, PROK, CHICKEN, VEG, SEAFOOD and OTH
