@@ -89,6 +89,9 @@
 
 ## 6	Explain what is being done on each of these two callbacks and how they relate to the cbufRx and cbufTx buffers. 
 
+	* read: it is called when the system finishes receives all the bytes requested from a UART read job. This means that it should write to cbufRx buffers
+ 	* write:it is called when the system finishes sending all the bytes requested from a UART read job. This means that it should write to cbufTx buffers
+
 ## 7	Draw a diagram that explains the program flow for UART receive – starting with the user typing a character and ending with how that characters ends up in the circular buffer “cbufRx”. Please make reference to specific functions in the starter code. 
 
 ## 8	Draw a diagram that explains the program flow for the UART transmission – starting from a string added by the program to the circular buffer “cbufTx” and ending on characters being shown on the screen of a PC (On Teraterm, for example). Please make reference to specific functions in the starter code. 
