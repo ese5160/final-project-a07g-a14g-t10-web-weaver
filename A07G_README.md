@@ -65,6 +65,9 @@
 
 ## 1	What does “InitializeSerialConsole()” do? In said function, what is “cbufRx” and “cbufTx”? What type of data structure is it? 
 
+	* “InitializeSerialConsole()" initializes UART and registers callback. 
+	* “cbufRx” and “cbufTx” are two functions which Initialize circular buffers for RX and TX.
+ 	* Type of data structure is uint8_t.
 
 
 ## 2	How are “cbufRx” and “cbufTx” initialized? Where is the library that defines them (please list the *C file they come from). 
