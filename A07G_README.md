@@ -62,10 +62,17 @@
 
 ## 3. Flow charts
 
-### 1. Joystick Task flow charts
+### 1. Joystick Task flow chart
 
 ![](Joystick_flowchart.png)
 
+### 2. Sensor reading Task flow chart
+
+![](Sensor_reading_flowchart.png)
+
+### 3. Actuator control Task flow chart
+
+![](Actuator_control_flowchart.png)
 
 # 2. Starter code
 
