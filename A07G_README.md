@@ -84,11 +84,9 @@
 	* They are defined in functions "usart_read_callback" and "usart_write_callback"
 	
 ## 5	What are the callback functions that are called when: 
-	a	A character is received? (RX) 
-	b	A character has been sent? (TX) 
+	a	A character is received? (RX)    usart_read_callback
+	b	A character has been sent? (TX)  usart_write_callback
 
-	* a. usart_read_callback
- 	* b. usart_write_callback
 ## 6	Explain what is being done on each of these two callbacks and how they relate to the cbufRx and cbufTx buffers. 
 
 ## 7	Draw a diagram that explains the program flow for UART receive – starting with the user typing a character and ending with how that characters ends up in the circular buffer “cbufRx”. Please make reference to specific functions in the starter code. 
