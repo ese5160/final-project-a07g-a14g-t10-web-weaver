@@ -115,6 +115,8 @@
 
 ## 9	What is done on the function “startStasks()” in main.c? How many threads are started?
 
+	* Initialize application task. 1128 threads are started
+
 # 3. Debug logger module
 
 As seen in serialConsole.c.

@@ -162,7 +162,7 @@ void LogMessage(enum eDebugLogLevels level, const char *format, ...)
 		va_start(args, format);
 		vsprintf(messageBuffer, format, args);
 		va_end(args);
-		printf("%s\n", buffer);
+		SerialConsoleWriteString(messageBuffer);
 	} 
 }
 
