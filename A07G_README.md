@@ -81,7 +81,7 @@
 
 ## 4	Where are the interrupts for UART character received and UART character sent defined? 
 
-	* They are defined in functions "usart_read_callback" and "usart_write_callback"
+	* They are defined in functions "SerialConsoleWriteString(char *string)" and "SerialConsoleReadCharacter(uint8_t *rxChar)"
 	
 ## 5	What are the callback functions that are called when: 
 	a	A character is received? (RX)    usart_read_callback
