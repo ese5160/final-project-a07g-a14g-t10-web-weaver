@@ -86,7 +86,9 @@
 
 ![](Wifi_flowchart.png)
 
+### 7. System control Task flow chart
 
+![](System_control_flowchart.png)
 
 # 2. Starter code
 
