@@ -67,10 +67,13 @@
 
 	* “InitializeSerialConsole()" initializes UART and registers callback. 
 	* “cbufRx” and “cbufTx” are two functions which Initialize circular buffers for RX and TX.
- 	* Type of data structure is uint8_t.
+ 	* Type of data structure is handle type
 
 
-## 2	How are “cbufRx” and “cbufTx” initialized? Where is the library that defines them (please list the *C file they come from). 
+## 2	How are “cbufRx” and “cbufTx” initcircular_buf_initialized? Where is the library that defines them (please list the *C file they come from). 
+
+	* They are initialized in "circular_buf_init" function. This function takes in their buffer name and size. Then reset the corresponding buffer
+ 	* circular_buffer.c
 
 ## 3	Where are the character arrays where the RX and TX characters are being stored at the end? Please mention their name and size.
 
