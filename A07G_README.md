@@ -100,6 +100,8 @@
 
 # 3. Debug logger module
 
+As seen in serialConsole.c.
+
 # 4.Wiretap the convo
 
 ## 1	Submit your answers to your GitHub repository README.md
