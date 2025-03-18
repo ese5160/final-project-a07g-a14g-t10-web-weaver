@@ -77,6 +77,8 @@
 
 ## 3	Where are the character arrays where the RX and TX characters are being stored at the end? Please mention their name and size.
 
+	* They are stored in cBufRx and cBufTx. Both size are 512
+
 ## 4	Where are the interrupts for UART character received and UART character sent defined? 
 
 ## 5	What are the callback functions that are called when: 
