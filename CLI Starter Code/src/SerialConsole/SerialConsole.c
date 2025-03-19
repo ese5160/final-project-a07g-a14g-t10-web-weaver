@@ -236,8 +236,10 @@ void usart_read_callback(struct usart_module *const usart_module)
 	
 	usart_read_buffer_job(&usart_instance,(uint8_t *)&received_buffer,1);
 	
-	circular_buf_put(cbufRx,received_buffer);
-	
+	if(received_buffer != NULL)
+	{
+		
+	}
 }
 
 /**************************************************************************/ 
