@@ -136,8 +136,27 @@ As seen in serialConsole.c.
 # 4.Wiretap the convo
 
 ## 1	Submit your answers to your GitHub repository README.md
+
+1. **What nets must you attach the logic analyzer to? **
+
+   The logic analyzer must attach to PB10, PB11 and GND
+
+2. **Where on the circuit board can you attach/solder to?**
+
+   PB10, PB11 GND header pins and UART DEBUG port.
+
+3. **What are critical settings for the logic analyzer?**
+
+​	The Analyzer must set to the Async Serial, and set the bit rate to 115200, and select input channel 0, the rest of the settings is as default.
+
 ## 2	Submit a photo of your hardware connections between the SAMW25 Xplained dev board and the logic analyzer. 
+
+![](D:\course_resource\ESE_5160\Homework\A07G~A14G\final-project-a07g-a14g-t10-web-weaver\A07G_hardware_connection.png)
+
 ## 3	Submit a screenshot of the decoded message.
+
+![](A07G_decoded_message.png)
+
 ## 4	Submit a small capture file (i.e., the .sal file) of a wiretapped conversation (you don’t need to log 30 minutes worth of UART messages 🙂)
 
-​	
+As seen in A07G_writeapped_conversation.sal
