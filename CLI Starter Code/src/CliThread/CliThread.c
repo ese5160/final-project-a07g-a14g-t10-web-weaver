@@ -35,7 +35,8 @@ static const CLI_Command_Definition_t xResetCommand =
         "reset: Resets the device\r\n",
         (const pdCOMMAND_LINE_CALLBACK)CLI_ResetDevice,
         0};
-
+		
+SemaphoreHandle_t xSemaphore;
 /******************************************************************************
  * Forward Declarations
  ******************************************************************************/
@@ -65,7 +66,7 @@ void vCommandConsoleTask(void *pvParameters)
     static uint8_t pcEscapeCodePos = 0;
 
     // Any semaphores/mutexes/etc you needed to be initialized, you can do them here
-
+	xSemaphore = xSemaphoreCreateMutex();
     /* This code assumes the peripheral being used as the console has already
     been opened and configured, and is passed into the task as the task
     parameter.  Cast the task parameter to the correct type. */
@@ -211,13 +212,22 @@ void vCommandConsoleTask(void *pvParameters)
  * @fn			void FreeRTOS_read(char* character)
  * @brief		STUDENTS TO COMPLETE. This function block the thread unless we received a character. How can we do this?
                  There are multiple solutions! Check all the inter-thread communications available! See https://www.freertos.org/a00113.html
- * @details		STUDENTS TO COMPLETE.
+ * @details		STUDENTS TO COMPLETE.This function block the thread until a character is available in the reception buffer.
+				 Once a character is received, it should be stored in the provided argument pointer.
+ * @para character storage pointer
  * @note
  *****************************************************************************/
 static void FreeRTOS_read(char *character)
 {
     // ToDo: Complete this function
-    vTaskSuspend(NULL); // We suspend ourselves. Please remove this when doing your code
+    //vTaskSuspend(NULL); // We suspend ourselves. Please remove this when doing your code
+	if(xSemaphore != NULL)
+	{
+		if(xSemaphoreTake(xSemaphoreTake,portMAX_DELAY) == pdTRUE)
+		{
+			
+		}
+	}
 }
 
 /******************************************************************************
