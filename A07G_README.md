@@ -127,7 +127,7 @@
 
 ## 8	Draw a diagram that explains the program flow for the UART transmission – starting from a string added by the program to the circular buffer “cbufTx” and ending on characters being shown on the screen of a PC (On Teraterm, for example). Please make reference to specific functions in the starter code. 
 
-![](Uart_Send.jpeg)
+![](Uart_send.jpeg)
 
 ## 9	What is done on the function “startStasks()” in main.c? How many threads are started?
 
