@@ -43,6 +43,8 @@ cbuf_handle_t cbufTx; ///< Circular buffer handler for transmitting characters
 char latestRx; ///< Holds the latest character received
 char latestTx; ///< Holds the latest character to be transmitted
 
+SemaphoreHandle_t xSemaphore;
+
 /******************************************************************************
  * Callback Declarations
  ******************************************************************************/
@@ -232,14 +234,10 @@ static void configure_usart_callbacks(void)
 void usart_read_callback(struct usart_module *const usart_module)
 {
 	// ToDo: Complete this function
-	uint8_t received_buffer;
 	
-	usart_read_buffer_job(&usart_instance,(uint8_t *)&received_buffer,1);
-	
-	if(received_buffer != NULL)
-	{
-		
-	}
+	circular_buf_put(cbufRx,latestRx);
+	usart_read_buffer_job(&usart_instance,(uint8_t *)&latestRx,1);
+	xSemaphoreGiveFromISR( xSemaphore, NULL);
 }
 
 /**************************************************************************/ 

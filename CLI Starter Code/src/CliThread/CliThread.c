@@ -14,7 +14,8 @@
 /******************************************************************************
  * Defines
  ******************************************************************************/
-
+extern cbuf_handle_t cbufRx;
+extern SemaphoreHandle_t xSemaphore;
 /******************************************************************************
  * Variables
  ******************************************************************************/
@@ -36,7 +37,7 @@ static const CLI_Command_Definition_t xResetCommand =
         (const pdCOMMAND_LINE_CALLBACK)CLI_ResetDevice,
         0};
 		
-SemaphoreHandle_t xSemaphore;
+
 /******************************************************************************
  * Forward Declarations
  ******************************************************************************/
@@ -66,7 +67,7 @@ void vCommandConsoleTask(void *pvParameters)
     static uint8_t pcEscapeCodePos = 0;
 
     // Any semaphores/mutexes/etc you needed to be initialized, you can do them here
-	xSemaphore = xSemaphoreCreateMutex();
+	xSemaphore = xSemaphoreCreateBinary();
     /* This code assumes the peripheral being used as the console has already
     been opened and configured, and is passed into the task as the task
     parameter.  Cast the task parameter to the correct type. */
@@ -217,46 +218,20 @@ void vCommandConsoleTask(void *pvParameters)
  * @para character storage pointer
  * @note
  *****************************************************************************/
+
 static void FreeRTOS_read(char *character)
 {
     // ToDo: Complete this function
     //vTaskSuspend(NULL); // We suspend ourselves. Please remove this when doing your code
-    
-    // Ensure a valid pointer is provided
-    if (character == NULL)
-    {
-        return;
-    }
-
-    // Check if the semaphore is initialized
-    if (xSemaphore != NULL)
-    {
-        // Attempt to take the semaphore (blocks indefinitely until available)
-        if (xSemaphoreTake(xSemaphore, portMAX_DELAY) == pdTRUE)
-        {
-            // Critical section: Read a character from the circular buffer
-            if (!circular_buffer_is_empty(&cbufRx))  
-            {
-                *character = circular_buffer_read(&cbufRx); // Read from buffer
-            }
-            else
-            {
-                *character = '\0'; // Indicate no data available
-            }
-
-            // Release the semaphore after accessing the buffer
-            xSemaphoreGive(xSemaphore);
-        }
-    }
-
-	/*
-	if(xSemaphore != NULL)
+	uint8_t data;
+	
+	xSemaphoreTake(xSemaphore,portMAX_DELAY);
+	
+	while(circular_buf_get(cbufRx,&data)!=0)
 	{
-		if(xSemaphoreTake(xSemaphoreTake,portMAX_DELAY) == pdTRUE)
-		{
-			
-		}
-	}*/
+		xSemaphoreTake(xSemaphore,portMAX_DELAY);
+	}
+	*character=(char)data;
 }
 
 /******************************************************************************
