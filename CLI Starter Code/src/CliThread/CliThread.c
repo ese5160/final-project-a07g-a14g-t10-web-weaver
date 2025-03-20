@@ -221,13 +221,42 @@ static void FreeRTOS_read(char *character)
 {
     // ToDo: Complete this function
     //vTaskSuspend(NULL); // We suspend ourselves. Please remove this when doing your code
+    
+    // Ensure a valid pointer is provided
+    if (character == NULL)
+    {
+        return;
+    }
+
+    // Check if the semaphore is initialized
+    if (xSemaphore != NULL)
+    {
+        // Attempt to take the semaphore (blocks indefinitely until available)
+        if (xSemaphoreTake(xSemaphore, portMAX_DELAY) == pdTRUE)
+        {
+            // Critical section: Read a character from the circular buffer
+            if (!circular_buffer_is_empty(&cbufRx))  
+            {
+                *character = circular_buffer_read(&cbufRx); // Read from buffer
+            }
+            else
+            {
+                *character = '\0'; // Indicate no data available
+            }
+
+            // Release the semaphore after accessing the buffer
+            xSemaphoreGive(xSemaphore);
+        }
+    }
+
+	/*
 	if(xSemaphore != NULL)
 	{
 		if(xSemaphoreTake(xSemaphoreTake,portMAX_DELAY) == pdTRUE)
 		{
 			
 		}
-	}
+	}*/
 }
 
 /******************************************************************************
