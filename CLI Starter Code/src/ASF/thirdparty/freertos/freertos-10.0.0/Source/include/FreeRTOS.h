@@ -121,7 +121,7 @@ extern "C" {
 	#define INCLUDE_vTaskDelete 0
 #endif
 
-#ifndef INCLUDE_vTaskSuspend
+#ifndef INCLUDE_vTaskSuspend(daemonTaskHandle);
 	#define INCLUDE_vTaskSuspend 0
 #endif
 

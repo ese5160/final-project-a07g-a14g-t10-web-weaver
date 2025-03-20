@@ -37,7 +37,19 @@ static const CLI_Command_Definition_t xResetCommand =
         (const pdCOMMAND_LINE_CALLBACK)CLI_ResetDevice,
         0};
 		
-
+static const CLI_Command_Definition_t xVersionCommand =
+{
+	"version",
+	"version: Get CLI Version\r\n",
+	(const pdCOMMAND_LINE_CALLBACK)CLI_Version,
+	0};
+	
+static const CLI_Command_Definition_t xTicksCommand =
+{
+	"ticks",
+	"ticks: Get current sticks\r\n",
+	(const pdCOMMAND_LINE_CALLBACK)CLI_Ticks,
+0};
 /******************************************************************************
  * Forward Declarations
  ******************************************************************************/
@@ -56,6 +68,8 @@ void vCommandConsoleTask(void *pvParameters)
 
     FreeRTOS_CLIRegisterCommand(&xClearScreen);
     FreeRTOS_CLIRegisterCommand(&xResetCommand);
+	FreeRTOS_CLIRegisterCommand(&xVersionCommand);
+	FreeRTOS_CLIRegisterCommand(&xTicksCommand);
 
     uint8_t cRxedChar[2], cInputIndex = 0;
     BaseType_t xMoreDataToFollow;
@@ -255,4 +269,19 @@ BaseType_t CLI_ResetDevice(int8_t *pcWriteBuffer, size_t xWriteBufferLen, const 
 {
     system_reset();
     return pdFALSE;
+}
+
+// CLI Command. Get Version
+BaseType_t CLI_Version(int8_t *pcWriteBuffer, size_t xWriteBufferLen, const int8_t *pcCommandString)
+{
+	SerialConsoleWriteString(VERSION);
+	return pdFALSE;
+}
+
+BaseType_t CLI_Ticks(int8_t *pcWriteBuffer, size_t xWriteBufferLen, const int8_t *pcCommandString)
+{
+	char messageBuffer[MAX_INPUT_LENGTH_CLI];
+	snprintf(messageBuffer,MAX_INPUT_LENGTH_CLI,"current ticks: %d\r\n",xTaskGetTickCount());
+	SerialConsoleWriteString(messageBuffer);
+	return pdFALSE;
 }

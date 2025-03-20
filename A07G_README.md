@@ -160,3 +160,17 @@ As seen in serialConsole.c.
 ## 4	Submit a small capture file (i.e., the .sal file) of a wiretapped conversation (you don’t need to log 30 minutes worth of UART messages 🙂)
 
 As seen in A07G_writeapped_conversation.sal
+
+# 5. Complete the CLI
+
+Finish
+
+# 6. Add CLI commands
+
+### Video link
+
+https://drive.google.com/file/d/1w65TyX5yT2rJ3hYWv59QQYCpqtB4jLrm/view?usp=sharing
+
+This video is also in the github repo, named "functionality_demo.MOV"
+
+# 7. Using Percepio
