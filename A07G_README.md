@@ -176,5 +176,3 @@ Finish
 https://drive.google.com/file/d/1w65TyX5yT2rJ3hYWv59QQYCpqtB4jLrm/view?usp=sharing
 
 This video is also in the github repo, named "functionality_demo.MOV"
-
-# 7. Using Percepio
